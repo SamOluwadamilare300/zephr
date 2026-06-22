@@ -1,0 +1,144 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AchievementCategory {
+  sports
+  finance
+  student_service
+}
+
+enum GalleryType {
+  photo
+  poster
+  certificate
+  award
+  letter
+  video
+}
+
+enum QuestionStatus {
+  pending
+  answered
+}
+
+model Candidate {
+  id           Int      @id @default(autoincrement())
+  name         String
+  position     String   @default("General Secretary")
+  electionTag  String   @default("LSUG 2026") @map("election_tag")
+  tagline      String?
+  subheadline  String?
+  portraitUrl  String?  @map("portrait_url")
+  whatsappLink String?  @map("whatsapp_link")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("candidates")
+}
+
+model Achievement {
+  id              Int                 @id @default(autoincrement())
+  category        AchievementCategory
+  title           String
+  description     String
+  metricLabel     String?             @map("metric_label")
+  metricValue     Int?                @map("metric_value")
+  imageUrl        String?             @map("image_url")
+  isTimelineEvent Boolean             @default(false) @map("is_timeline_event")
+  eventDate       DateTime?           @map("event_date")
+  sortOrder       Int                 @default(0) @map("sort_order")
+  createdAt       DateTime            @default(now()) @map("created_at")
+
+  @@map("achievements")
+}
+
+model Testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  roleLabel   String   @map("role_label")
+  photoUrl    String?  @map("photo_url")
+  quote       String
+  isPublished Boolean  @default(true) @map("is_published")
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("testimonials")
+}
+
+model GalleryItem {
+  id           Int         @id @default(autoincrement())
+  type         GalleryType
+  title        String
+  url          String
+  thumbnailUrl String?     @map("thumbnail_url")
+  description  String?
+  sortOrder    Int         @default(0) @map("sort_order")
+  createdAt    DateTime    @default(now()) @map("created_at")
+
+  @@map("gallery_items")
+}
+
+model Question {
+  id         Int            @id @default(autoincrement())
+  name       String?
+  department String?
+  question   String
+  answer     String?
+  status     QuestionStatus @default(pending)
+  createdAt  DateTime       @default(now()) @map("created_at")
+  answeredAt DateTime?      @map("answered_at")
+
+  @@map("questions")
+}
+
+model Ambassador {
+  id           Int        @id @default(autoincrement())
+  name         String
+  nickname     String?
+  department   String
+  username     String     @unique
+  cardImageUrl String?    @map("card_image_url")
+  createdAt    DateTime   @default(now()) @map("created_at")
+  referrals    Referral[]
+
+  @@map("ambassadors")
+}
+
+model Referral {
+  id                    Int        @id @default(autoincrement())
+  ambassadorId          Int        @map("ambassador_id")
+  ambassador            Ambassador @relation(fields: [ambassadorId], references: [id], onDelete: Cascade)
+  visitorFingerprint    String?    @map("visitor_fingerprint")
+  convertedToAmbassador Boolean    @default(false) @map("converted_to_ambassador")
+  convertedToWhatsapp   Boolean    @default(false) @map("converted_to_whatsapp")
+  createdAt             DateTime   @default(now()) @map("created_at")
+
+  @@map("referrals")
+}
+
+model QrScan {
+  id                    Int      @id @default(autoincrement())
+  source                String
+  visitorFingerprint    String?  @map("visitor_fingerprint")
+  convertedToWhatsapp   Boolean  @default(false) @map("converted_to_whatsapp")
+  convertedToAmbassador Boolean  @default(false) @map("converted_to_ambassador")
+  createdAt             DateTime @default(now()) @map("created_at")
+
+  @@map("qr_scans")
+}
+
+model CampaignMetric {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  label     String
+  value     Int      @default(0)
+  suffix    String?
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("campaign_metrics")
+}
