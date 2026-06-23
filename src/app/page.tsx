@@ -21,7 +21,7 @@ export default async function Home() {
       <QrTracker />
       {/* <Nav /> */}
       <Hero />
-      <TrustMetrics />
+      {/* <TrustMetrics /> */}
       <TrackRecord />
       <Timeline />
       <Vision />

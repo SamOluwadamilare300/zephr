@@ -3,7 +3,14 @@
 import { useState } from "react";
 import { Reveal } from "./reveal";
 import { cn } from "@/lib/utils";
-import type { GalleryItem } from "@prisma/client";
+
+type GalleryDisplayItem = {
+  id: number | string;
+  type: "photo" | "poster" | "certificate" | "award" | "letter" | "video";
+  title: string;
+  url: string;
+  thumbnailUrl: string | null;
+};
 
 const filters = [
   { key: "all", label: "All" },
@@ -15,7 +22,7 @@ const filters = [
   { key: "video", label: "Videos" },
 ] as const;
 
-export function Gallery({ items }: { items: GalleryItem[] }) {
+export function Gallery({ items }: { items: GalleryDisplayItem[] }) {
   const [active, setActive] = useState<string>("all");
   const visible = active === "all" ? items : items.filter((i) => i.type === active);
 
@@ -46,7 +53,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
 
         {visible.length === 0 ? (
           <p className="mt-10 rounded-xl2 border border-dashed border-primary/20 p-10 text-center text-sm text-ink/50">
-            No evidence uploaded for this category yet. Add items from the Admin Dashboard.
+            No evidence uploaded for this category yet.
           </p>
         ) : (
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
