@@ -25,7 +25,7 @@ export default async function Home() {
       <TrackRecord />
       <Timeline />
       <Vision />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Gallery items={gallery} />
       {/* <AskZephyr /> */}
       <AmbassadorCta />

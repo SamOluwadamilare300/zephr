@@ -27,9 +27,9 @@ export const trackRecord = [
     description:
       "Organized and supervised inter-departmental sports competitions, coordinating logistics, officiating, and welfare for hundreds of student-athletes across two academic sessions.",
     stats: [
-      { label: "Events organized", value: "18+" },
-      { label: "Athletes coordinated", value: "600+" },
-      { label: "Departments involved", value: "11" },
+      { label: "Events organized", value: "4+" },
+      // { label: "Athletes coordinated", value: "600+" },
+      // { label: "Departments involved", value: "11" },
     ],
   },
   {
@@ -39,8 +39,8 @@ export const trackRecord = [
       "Supervised sports directorate funds with documented disbursement records and public reporting, setting a transparency standard for student-led budgets.",
     stats: [
       { label: "Funds supervised", value: "₦1.8M+" },
-      { label: "Financial reports filed", value: "6" },
-      { label: "Audit queries raised against him", value: "0" },
+      { label: "Financial reports filed", value: "3" },
+      // { label: "Audit queries raised against him", value: "0" },
     ],
   },
   {
@@ -49,18 +49,17 @@ export const trackRecord = [
     description:
       "Represented student concerns directly to faculty and union leadership, resolving recurring issues around facility access and event scheduling.",
     stats: [
-      { label: "Issues resolved", value: "30+" },
-      { label: "Town halls attended", value: "12" },
-      { label: "Years in leadership", value: "3" },
+      { label: "Issues resolved", value: "10+" },
+      // { label: "Town halls attended", value: "12" },
+      // { label: "Years in leadership", value: "3" },
     ],
   },
 ];
 
 export const timeline = [
-  { date: "2023", title: "Joined Faculty Sports Committee", description: "Started as a volunteer coordinator for inter-departmental games." },
+  { date: "2024", title: "Joined Depatmental Sports Committee", description: "Started as a fellow teammates for inter-departmental games." },
   { date: "2024", title: "Appointed Sports Director", description: "Took over full responsibility for fixtures, officiating, and athlete welfare." },
-  { date: "2024", title: "Introduced Public Funds Reporting", description: "First sports directorate to publish itemized expenditure after each event." },
-  { date: "2025", title: "Best Directorate Award", description: "Recognized by departmental student leadership for organization and transparency." },
+  { date: "2025", title: "Best Course Representative", description: "Recognized by departmental student leadership for organization and transparency." },
   { date: "2026", title: "LSUG General Secretary Candidate", description: "Running on a record students can verify, not just promises." },
 ];
 
