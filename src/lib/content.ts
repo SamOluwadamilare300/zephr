@@ -27,7 +27,7 @@ export const trackRecord = [
     description:
       "Organized and supervised inter-departmental sports competitions, coordinating logistics, officiating, and welfare for hundreds of student-athletes across two academic sessions.",
     stats: [
-      { label: "Events organized", value: "4+" },
+      { label: "Events involved", value: "4+" },
       // { label: "Athletes coordinated", value: "600+" },
       // { label: "Departments involved", value: "11" },
     ],
