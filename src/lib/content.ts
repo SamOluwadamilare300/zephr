@@ -57,8 +57,8 @@ export const trackRecord = [
 ];
 
 export const timeline = [
-  { date: "2024", title: "Joined Depatmental Sports Committee", description: "Started as a fellow teammates for inter-departmental games." },
-  { date: "2024", title: "Appointed Sports Director", description: "Took over full responsibility for fixtures, officiating, and athlete welfare." },
+  { date: "2024", title: "Joined Depatmental Sports Committee", description: "Started as a fellow teammates." },
+  { date: "2024", title: "Appointed Sports Director", description: "Took over full responsibility for fixtures, logistics, and athlete welfare." },
   { date: "2025", title: "Best Course Representative", description: "Recognized by departmental student leadership for organization and transparency." },
   { date: "2026", title: "LSUG General Secretary Candidate", description: "Running on a record students can verify, not just promises." },
 ];
