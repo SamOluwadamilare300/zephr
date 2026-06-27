@@ -25,7 +25,7 @@ export const trackRecord = [
     category: "sports" as const,
     title: "Sports Leadership",
     description:
-      "Organized and supervised inter-departmental sports competitions, coordinating logistics, officiating, and welfare for hundreds of student-athletes across two academic sessions.",
+      "Supervised inter-departmental sports competitions, coordinating logistics and welfare for two academic sessions.",
     stats: [
       { label: "Events involved", value: "4+" },
       // { label: "Athletes coordinated", value: "600+" },
@@ -36,7 +36,7 @@ export const trackRecord = [
     category: "finance" as const,
     title: "Financial Accountability",
     description:
-      "Supervised sports directorate funds with documented disbursement records and public reporting, setting a transparency standard for student-led budgets.",
+      "Supervised departmental funds with documented disbursement records and public reporting, setting a transparency standard for student-led budgets for 2 years.",
     stats: [
       { label: "Funds supervised", value: "₦1.8M+" },
       { label: "Financial reports filed", value: "3" },
@@ -47,7 +47,7 @@ export const trackRecord = [
     category: "student_service" as const,
     title: "Student Service",
     description:
-      "Represented student concerns directly to faculty and union leadership, resolving recurring issues around facility access and event scheduling.",
+      "Represented student concerns directly to departments, resolving recurring issues around results.",
     stats: [
       { label: "Issues resolved", value: "10+" },
       // { label: "Town halls attended", value: "12" },
